@@ -44,5 +44,11 @@ INNER JOIN assignments ON staff.id = assignments.employee_id) AS d
 WHERE d.enclosure_id = (SELECT id FROM enclosures WHERE name = 'Planet Of The Apes');
 ```
 
+5) The names of the other animals sharing an enclosure with a given animal 
+```sql
+SELECT * FROM animals WHERE (enclosure_id = 
+(SELECT enclosure_id FROM animals WHERE name = 'Simba')) AND (name !='Simba');
+```
+
 
 
