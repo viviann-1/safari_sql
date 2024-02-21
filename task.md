@@ -20,3 +20,12 @@ where id = (SELECT employee_id FROM
 INNER JOIN assignments ON enclosures.id = assignments.enclosure_id) AS d
 WHERE d.closed_for_maintainance = TRUE);
 ```
+2) The name of the enclosure where the oldest animal lives. If there are two animals who are the same age choose the first one alphabetically.
+```sql
+SELECT enclosures.name FROM animals
+INNER JOIN enclosures
+ON animals.enclosure_id = enclosures.id
+ORDER BY age DESC, animals.name
+LIMIT 1;
+```
+
