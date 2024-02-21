@@ -37,7 +37,7 @@ CREATE TABLE assignments(
 );
 
 INSERT INTO enclosures (name, capacity, closed_for_maintainance) VALUES ('Big Cat Field', 20, False);
-INSERT INTO enclosures (name, capacity, closed_for_maintainance) VALUES ('Monkey Enclosure', 2, True);
+INSERT INTO enclosures (name, capacity, closed_for_maintainance) VALUES ('Planet Of The Apes', 2, True);
 INSERT INTO enclosures (name, capacity, closed_for_maintainance) VALUES ('Bird Sanctuary', 3, False);
 
 
