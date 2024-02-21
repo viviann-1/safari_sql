@@ -36,3 +36,13 @@ INNER JOIN assignments ON animals.enclosure_id = assignments.enclosure_id) AS d
 where d.type = 'Lion');
 ```
 
+4) The number of different keepers who have been assigned to work in a given enclosure
+```sql
+SELECT COUNT(*) FROM
+(SELECT * FROM staff 
+INNER JOIN assignments ON staff.id = assignments.employee_id) AS d
+WHERE d.enclosure_id = (SELECT id FROM enclosures WHERE name = 'Planet Of The Apes');
+```
+
+
+
