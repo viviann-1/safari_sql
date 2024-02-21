@@ -28,4 +28,11 @@ ON animals.enclosure_id = enclosures.id
 ORDER BY age DESC, animals.name
 LIMIT 1;
 ```
+3) The number of different animal types a given keeper has been assigned to work with.
+```sql
+SELECT name FROM staff
+WHERE id IN (SELECT DISTINCT(employee_id) FROM (SELECT * FROM animals 
+INNER JOIN assignments ON animals.enclosure_id = assignments.enclosure_id) AS d
+where d.type = 'Lion');
+```
 
